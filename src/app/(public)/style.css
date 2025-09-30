@@ -1,6 +1,7 @@
 .container-landing {
   width: 100%;
   height: auto;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,6 +14,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 50px 0px;
 }
 
 .container-landing .content-landing .timelines {
@@ -20,140 +22,120 @@
   height: auto;
 }
 
-.container-landing .content-landing .timeline-month {
-
+.container-landing .content-landing .timelines .timeline {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
 }
 
-/* timeline raiz */
-.timeline {
-  margin-top: 20px;
+.container-landing .content-landing .timelines .timeline .timeline-month {
+  width: max-content;
+  min-width: 150px;
+  padding: 20px 20px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   position: relative;
 }
 
-.timeline:before {
-  position: absolute;
-  content: '';
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(to right, #8a9196 0%, #7a8288 60%, #62696d 100%);
-  left: 14px;
-  top: 5px;
-  border-radius: 4px;
+.container-landing .content-landing .timelines .timeline .timeline-month p {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0px 0px 4px 0px;
 }
 
-/* título do mês */
-.timeline-month {
+.container-landing .content-landing .timelines .timeline .timeline-month span {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0px;
+}
+
+.container-landing .content-landing .timelines .timeline .timeline-section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-landing .content-landing .timelines .timeline .timeline-section .timeline-day {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.container-landing .content-landing .timelines .timeline .timeline-section .timeline-day .date {
+  width: 220px;
+  min-width: 220px;
+  padding: 20px 20px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   position: relative;
-  padding: 4px 15px 4px 35px;
-  background-color: #444950;
-  display: inline-block;
-  border-radius: 40px;
-  border: 1px solid #17191B;
-  margin-bottom: 30px;
-  color: #fff;
-  font-weight: bold;
 }
 
-.timeline-month span {
+.container-landing .content-landing .timelines .timeline .timeline-section .timeline-day .date::before {
+  content: "";
   position: absolute;
-  top: -1px;
-  left: calc(100% - 10px);
-  z-index: -1;
-  white-space: nowrap;
-  background-color: #111;
-  padding: 4px 10px 4px 20px;
-  border-top-right-radius: 40px;
-  border-bottom-right-radius: 40px;
-  border: 1px solid black;
-  font-size: 12px;
-}
-
-/* bolinha do mês */
-.timeline-month:before {
-  position: absolute;
-  content: '';
+  right: -13px;
+  top: 50%;
+  transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  background: linear-gradient(to bottom, #8a9196 0%, #7a8288 60%, #70787d 100%);
-  border-radius: 100%;
-  border: 1px solid #17191B;
-  left: 5px;
-  top: 4px;
+  border-radius: 50%;
+  background: #efefef;
+  border: 2px solid var(--five);
 }
 
-/* seção de dias */
-.timeline-section {
-  padding-left: 35px;
-  position: relative;
-  margin-bottom: 30px;
+.container-landing .content-landing .timelines .timeline .timeline-section .timeline-day .date p {
+  font-size: 18px;
+  font-weight: 500;
 }
 
-/* label da data */
-.timeline-date {
-  margin-bottom: 15px;
-  padding: 4px 15px;
-  background: linear-gradient(#74cae3, #5bc0de 60%, #4ab9db);
-  display: inline-block;
-  border-radius: 20px;
-  border: 1px solid #17191B;
-  color: #fff;
-  font-weight: bold;
-  font-size: 14px;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-  position: relative;
+.container-landing .content-landing .timelines .timeline .timeline-section .timeline-day .row {
+  width: 3px;
+  height: auto;
+  align-self: stretch;
+  background: var(--five);
 }
 
-/* conector horizontal da data até a linha */
-.timeline-date:before {
-  content: '';
-  position: absolute;
-  width: 30px;
-  height: 1px;
-  background-color: #444950;
-  top: 50%;
-  left: -35px;
+.container-landing .content-landing .timelines .timeline .timeline-section .timeline-day .timeline-events {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 15px 20px 50px 40px;
 }
 
-.timeline-date:after {
-  content: '';
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: linear-gradient(to bottom, #8a9196 0%, #7a8288 60%, #70787d 100%);
-  top: calc(50% - 5px);
-  left: -45px;
-  border: 1px solid #17191B;
-  border-radius: 100%;
+.container-landing .content-landing .timelines .timeline .timeline-section .timeline-day .timeline-events .event {
+  width: 100%;
+  height: auto;
+  padding: 25px;
+  border-radius: 12px;
+  border: 2px solid var(--five);
+  background: var(--three);
+  color: #fefefe;
 }
 
-/* eventos */
-.timeline-events {
-  margin-left: 10px;
+.container-landing .content-landing .timelines .timeline .timeline-section .timeline-day .timeline-events .event h1 {
+  font-size: 20px;
+  font-weight: 500;
 }
 
-.timeline-event {
-  position: relative;
-  background-color: #444950;
-  border-radius: 10px;
-  border: 1px solid #17191B;
-  margin-bottom: 15px;
-  padding: 10px 15px;
-  color: #fff;
-  transition: all 0.3s ease;
-}
-
-.timeline-event:hover {
-  background-color: #5bc0de;
-  transform: translateX(5px);
-}
-
-.timeline-event h1 {
-  margin: 0;
-  font-size: 15px;
-}
-
-.timeline-event p {
-  margin: 5px 0 0;
-  font-size: 13px;
-  color: #ddd;
+.container-landing .content-landing .timelines .timeline .timeline-section .timeline-day .timeline-events .event p {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 8px 0px 0px 0px;
 }
