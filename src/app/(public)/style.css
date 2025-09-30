@@ -1,0 +1,159 @@
+.container-landing {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-landing .content-landing {
+  width: 95%;
+  max-width: 1200px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-landing .content-landing .timelines {
+  width: 100%;
+  height: auto;
+}
+
+.container-landing .content-landing .timeline-month {
+
+}
+
+/* timeline raiz */
+.timeline {
+  margin-top: 20px;
+  position: relative;
+}
+
+.timeline:before {
+  position: absolute;
+  content: '';
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to right, #8a9196 0%, #7a8288 60%, #62696d 100%);
+  left: 14px;
+  top: 5px;
+  border-radius: 4px;
+}
+
+/* título do mês */
+.timeline-month {
+  position: relative;
+  padding: 4px 15px 4px 35px;
+  background-color: #444950;
+  display: inline-block;
+  border-radius: 40px;
+  border: 1px solid #17191B;
+  margin-bottom: 30px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.timeline-month span {
+  position: absolute;
+  top: -1px;
+  left: calc(100% - 10px);
+  z-index: -1;
+  white-space: nowrap;
+  background-color: #111;
+  padding: 4px 10px 4px 20px;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  border: 1px solid black;
+  font-size: 12px;
+}
+
+/* bolinha do mês */
+.timeline-month:before {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(to bottom, #8a9196 0%, #7a8288 60%, #70787d 100%);
+  border-radius: 100%;
+  border: 1px solid #17191B;
+  left: 5px;
+  top: 4px;
+}
+
+/* seção de dias */
+.timeline-section {
+  padding-left: 35px;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+/* label da data */
+.timeline-date {
+  margin-bottom: 15px;
+  padding: 4px 15px;
+  background: linear-gradient(#74cae3, #5bc0de 60%, #4ab9db);
+  display: inline-block;
+  border-radius: 20px;
+  border: 1px solid #17191B;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+/* conector horizontal da data até a linha */
+.timeline-date:before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 1px;
+  background-color: #444950;
+  top: 50%;
+  left: -35px;
+}
+
+.timeline-date:after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(to bottom, #8a9196 0%, #7a8288 60%, #70787d 100%);
+  top: calc(50% - 5px);
+  left: -45px;
+  border: 1px solid #17191B;
+  border-radius: 100%;
+}
+
+/* eventos */
+.timeline-events {
+  margin-left: 10px;
+}
+
+.timeline-event {
+  position: relative;
+  background-color: #444950;
+  border-radius: 10px;
+  border: 1px solid #17191B;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.timeline-event:hover {
+  background-color: #5bc0de;
+  transform: translateX(5px);
+}
+
+.timeline-event h1 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.timeline-event p {
+  margin: 5px 0 0;
+  font-size: 13px;
+  color: #ddd;
+}
